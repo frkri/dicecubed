@@ -1,5 +1,6 @@
 # Out
-/build
+build
+.cache
 
 # Prerequisites
 *.d

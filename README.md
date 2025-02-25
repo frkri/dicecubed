@@ -9,7 +9,7 @@ To build this project, make sure to have CMake installed locally.
 ```
 mkdir build
 cd build
-cmake ..
+cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 ..
 make
 ```
 
@@ -25,5 +25,5 @@ emmake make
 ## Run
 
 ```
-./raylib-cpp-example
+./dicecubed
 ```

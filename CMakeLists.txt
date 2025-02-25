@@ -32,7 +32,7 @@ endif()
 # This is the main part:
 set(SOURCES src/main.cpp)
 add_executable(${PROJECT_NAME} ${SOURCES})
-set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 11)
+set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 20)
 target_link_libraries(${PROJECT_NAME} PUBLIC raylib raylib_cpp)
 
 # Web Configurations
@@ -43,5 +43,3 @@ if (${PLATFORM} STREQUAL "Web")
     # Required linker flags for using Raylib with Emscripten
     target_link_options(${PROJECT_NAME} PRIVATE -sEXPORTED_FUNCTIONS=['_main','_malloc'] -sEXPORTED_RUNTIME_METHODS=ccall -sUSE_GLFW=3)
 endif()
-
-# That's it! You should have an example executable that you can run. Have fun!

@@ -29,9 +29,12 @@ if (NOT raylib_cpp_FOUND)
     FetchContent_MakeAvailable(raylib_cpp)
 endif()
 
-# This is the main part:
 set(SOURCES src/main.cpp)
 add_executable(${PROJECT_NAME} ${SOURCES})
+
+file(GLOB_RECURSE SRC_FILES src/*.cpp)
+target_sources(${PROJECT_NAME} PRIVATE ${SRC_FILES})
+
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 20)
 target_link_libraries(${PROJECT_NAME} PUBLIC raylib raylib_cpp)
 

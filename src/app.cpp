@@ -3,6 +3,7 @@
 #include "Camera3D.hpp"
 #include "Texture.hpp"
 #include "Vector3.hpp"
+#include "algorithm"
 #include "raylib.h"
 #include "scene.h"
 
@@ -10,7 +11,7 @@ App::App(const int targetFPS)
     : TargetFPS(targetFPS), Win(raylib::Window(1000, 800, "dicecubed")),
       Cam(raylib::Camera3D(raylib::Vector3(4, 3, 0), raylib::Vector3(0, 0, 0),
                            raylib::Vector3(0, 1, 0), 80)),
-      DiceTexture(raylib::Texture2D("../resources/dice.png")),
+      DiceTexture(raylib::Texture2D("../../resources/dice.png")),
       MainScene(Cam, DiceTexture) {}
 
 const void App::Run() {
@@ -54,13 +55,21 @@ void App::HandleKeyPress() {
             CamMode = CAMERA_FREE;
         break;
     case KEY_SPACE:
-        MainScene.RollDice(3);
+        MainScene.RollDice(RollCount);
         break;
     case KEY_UP:
         MainScene.AddDice();
         break;
     case KEY_DOWN:
         MainScene.RemoveDice();
+        break;
+    case KEY_LEFT:
+        RollCount = std::clamp(RollCount - 1, 1, 10);
+        MainScene.SetRollCount(RollCount);
+        break;
+    case KEY_RIGHT:
+        RollCount = std::clamp(RollCount + 1, 1, 10);
+        MainScene.SetRollCount(RollCount);
         break;
     }
 

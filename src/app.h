@@ -22,6 +22,7 @@ class App {
     Scene MainScene;
 
     int CamMode = CAMERA_CUSTOM;
+    int RollCount = 1;
 
     void HandleKeyPress();
     void Update();

@@ -20,7 +20,10 @@ class Scene {
     void AddDice();
     void RemoveDice();
 
+    void SetRollCount(int count);
+
   protected:
+    int RollCount = 1;
     raylib::Camera3D &Cam;
     raylib::Texture2D &Texture;
     std::vector<Dice> DiceList;
@@ -38,21 +41,21 @@ class Scene {
     }
 
     raylib::Texture2D EKey =
-        LoadScaledTexture("../resources/E_Key.png", KEY_SCALE);
+        LoadScaledTexture("../../resources/E_Key.png", KEY_SCALE);
     raylib::Texture2D QKey =
-        LoadScaledTexture("../resources/Q_Key.png", KEY_SCALE);
+        LoadScaledTexture("../../resources/Q_Key.png", KEY_SCALE);
     raylib::Texture2D SpaceKey =
-        LoadScaledTexture("../resources/Space_Key.png", KEY_SCALE);
+        LoadScaledTexture("../../resources/Space_Key.png", KEY_SCALE);
     raylib::Texture2D FKey =
-        LoadScaledTexture("../resources/F_Key.png", KEY_SCALE);
+        LoadScaledTexture("../../resources/F_Key.png", KEY_SCALE);
     raylib::Texture2D UpKey =
-        LoadScaledTexture("../resources/Up_Key.png", KEY_SCALE);
+        LoadScaledTexture("../../resources/Up_Key.png", KEY_SCALE);
     raylib::Texture2D DownKey =
-        LoadScaledTexture("../resources/Down_Key.png", KEY_SCALE);
+        LoadScaledTexture("../../resources/Down_Key.png", KEY_SCALE);
     raylib::Texture2D RightKey =
-        LoadScaledTexture("../resources/Right_Key.png", KEY_SCALE);
+        LoadScaledTexture("../../resources/Right_Key.png", KEY_SCALE);
     raylib::Texture2D LeftKey =
-        LoadScaledTexture("../resources/Left_Key.png", KEY_SCALE);
+        LoadScaledTexture("../../resources/Left_Key.png", KEY_SCALE);
 
     void DrawGUI();
 };

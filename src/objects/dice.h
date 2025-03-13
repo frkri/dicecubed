@@ -4,6 +4,7 @@
 #include "Vector3.hpp"
 #include "raylib.h"
 #include "rlgl.h"
+#include <string>
 
 class Dice {
   public:
@@ -31,16 +32,16 @@ class Dice {
                 }
             }
         }
-        return;
     }
 
     bool Roll(int times) {
         if (isRolling) {
-
             isRolling = false;
             currentAngle = 0;
             rollTime = 0.0f;
             rotationsLeft = 0;
+
+            result = -1;
         }
 
         isRolling = true;
@@ -52,6 +53,8 @@ class Dice {
     void SetPosition(const raylib::Vector3 &newPosition) {
         Position = newPosition;
     }
+
+    int GetResult() { return result; }
 
   private:
     static constexpr float SIZE = 1.0f;

@@ -53,6 +53,8 @@ void Scene::RollDice(int times) {
         dice.Roll(times);
 }
 
+void Scene::SetRollCount(int count) { RollCount = count; }
+
 void Scene::DrawGUI() {
     DrawText("Rollen", GetScreenWidth() / 2 - 30, GetScreenHeight() - 80, 20,
              RAYWHITE);
@@ -76,10 +78,21 @@ void Scene::DrawGUI() {
     DrawTexture(DownKey, 280, GetScreenHeight() - DownKey.GetHeight() - 20,
                 RAYWHITE);
 
-    DrawText(("Rollen Anzahl: " + std::to_string(3)).c_str(),
+    DrawText(("Rollen Anzahl: " + std::to_string(RollCount)).c_str(),
              GetScreenWidth() - 340, GetScreenHeight() - 80, 20, RAYWHITE);
     DrawTexture(RightKey, GetScreenWidth() - 300,
                 GetScreenHeight() - RightKey.GetHeight() - 20, RAYWHITE);
     DrawTexture(LeftKey, GetScreenWidth() - 340,
                 GetScreenHeight() - LeftKey.GetHeight() - 20, RAYWHITE);
+
+    int result = 0;
+    for (size_t i = 0; i < DiceList.size(); i++) {
+        if (DiceList[i].GetResult() == -1)
+            break;
+
+        result += DiceList[i].GetResult();
+    }
+
+    DrawText(("Ergebnis: " + std::to_string(result)).c_str(),
+             GetScreenWidth() / 2 - 50, 20, 20, RAYWHITE);
 }

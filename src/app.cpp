@@ -56,6 +56,12 @@ void App::HandleKeyPress() {
     case KEY_SPACE:
         MainScene.RollDice(3);
         break;
+    case KEY_UP:
+        MainScene.AddDice();
+        break;
+    case KEY_DOWN:
+        MainScene.RemoveDice();
+        break;
     }
 
     if (IsKeyDown('Q') || IsKeyDown('E') && CamMode == CAMERA_CUSTOM) {

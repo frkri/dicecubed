@@ -25,7 +25,6 @@ class Dice {
                 currentAngle += ANGLE_ADD;
 
                 rotationsLeft--;
-
                 if (rotationsLeft <= 0) {
                     isRolling = false;
                     result = GetRandomValue(1, 6);
@@ -36,13 +35,22 @@ class Dice {
     }
 
     bool Roll(int times) {
-        if (isRolling)
-            return false;
+        if (isRolling) {
+
+            isRolling = false;
+            currentAngle = 0;
+            rollTime = 0.0f;
+            rotationsLeft = 0;
+        }
 
         isRolling = true;
-        rotationsLeft = times * 4;
+        rotationsLeft = times;
 
         return true;
+    }
+
+    void SetPosition(const raylib::Vector3 &newPosition) {
+        Position = newPosition;
     }
 
   private:

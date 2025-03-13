@@ -9,13 +9,16 @@
 
 class Scene {
   public:
-    static constexpr float DICE_GAP = 6.5f;
+    static constexpr float DICE_GAP = 1.5f;
     static constexpr float KEY_SCALE = 0.4f;
 
     Scene(raylib::Camera3D &cam, raylib::Texture2D &texture);
 
     void Update();
     void RollDice(int times);
+
+    void AddDice();
+    void RemoveDice();
 
   protected:
     raylib::Camera3D &Cam;
@@ -42,6 +45,14 @@ class Scene {
         LoadScaledTexture("../resources/Space_Key.png", KEY_SCALE);
     raylib::Texture2D FKey =
         LoadScaledTexture("../resources/F_Key.png", KEY_SCALE);
+    raylib::Texture2D UpKey =
+        LoadScaledTexture("../resources/Up_Key.png", KEY_SCALE);
+    raylib::Texture2D DownKey =
+        LoadScaledTexture("../resources/Down_Key.png", KEY_SCALE);
+    raylib::Texture2D RightKey =
+        LoadScaledTexture("../resources/Right_Key.png", KEY_SCALE);
+    raylib::Texture2D LeftKey =
+        LoadScaledTexture("../resources/Left_Key.png", KEY_SCALE);
 
     void DrawGUI();
 };

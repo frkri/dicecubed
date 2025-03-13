@@ -7,14 +7,13 @@
 #include "scene.h"
 
 App::App(const int targetFPS)
-    : TargetFPS(targetFPS), Win(raylib::Window(250, 250, "dicecubed")),
+    : TargetFPS(targetFPS), Win(raylib::Window(1000, 800, "dicecubed")),
       Cam(raylib::Camera3D(raylib::Vector3(4, 3, 0), raylib::Vector3(0, 0, 0),
                            raylib::Vector3(0, 1, 0), 80)),
       DiceTexture(raylib::Texture2D("../resources/dice.png")),
       MainScene(Cam, DiceTexture) {}
 
 const void App::Run() {
-    Win.SetFullscreen(true);
     HideCursor();
     DisableCursor();
 

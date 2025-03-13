@@ -26,9 +26,20 @@ void Scene::Update() {
 }
 
 void Scene::DrawGUI() {
-    DrawTexture(EKey, GetScreenWidth() + EKey.GetWidth() - 20,
-                GetScreenHeight() - 10, RAYWHITE);
-    DrawTexture(QKey, GetScreenWidth() - 20, GetScreenHeight() - 10, RAYWHITE);
+    DrawText("ROLL", GetScreenWidth() / 2 - 25, GetScreenHeight() - 80, 20,
+             RAYWHITE);
+    DrawTexture(SpaceKey, GetScreenWidth() / 2 - SpaceKey.GetWidth() / 2,
+                GetScreenHeight() - SpaceKey.GetHeight() - 20, RAYWHITE);
+
+    DrawText("Rotate", GetScreenWidth() - 100, GetScreenHeight() - 80, 20,
+             RAYWHITE);
+    DrawTexture(EKey, GetScreenWidth() - EKey.GetWidth() - 20,
+                GetScreenHeight() - EKey.GetHeight() - 20, RAYWHITE);
+    DrawTexture(QKey, GetScreenWidth() - QKey.GetWidth() - 70,
+                GetScreenHeight() - QKey.GetHeight() - 20, RAYWHITE);
+
+    DrawText("Switch Camera", 20, GetScreenHeight() - 80, 20, RAYWHITE);
+    DrawTexture(FKey, 20, GetScreenHeight() - FKey.GetHeight() - 20, RAYWHITE);
 }
 
 void Scene::RollDice(int times) {

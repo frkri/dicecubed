@@ -38,6 +38,10 @@ class Scene {
         LoadScaledTexture("../resources/E_Key.png", KEY_SCALE);
     raylib::Texture2D QKey =
         LoadScaledTexture("../resources/Q_Key.png", KEY_SCALE);
+    raylib::Texture2D SpaceKey =
+        LoadScaledTexture("../resources/Space_Key.png", KEY_SCALE);
+    raylib::Texture2D FKey =
+        LoadScaledTexture("../resources/F_Key.png", KEY_SCALE);
 
     void DrawGUI();
 };

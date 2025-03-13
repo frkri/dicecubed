@@ -43,7 +43,6 @@ void App::Update() {
 }
 
 void App::HandleKeyPress() {
-
     switch (GetKeyPressed()) {
     case 'F':
         if (CamMode == CAMERA_FREE) {
@@ -54,6 +53,9 @@ void App::HandleKeyPress() {
             Cam.SetUp(raylib::Vector3(0, 1, 0));
         } else
             CamMode = CAMERA_FREE;
+        break;
+    case KEY_SPACE:
+        MainScene.RollDice(3);
         break;
     }
 

@@ -9,7 +9,7 @@
 
 class Scene {
   public:
-    static constexpr float DICE_GAP = 1.5f;
+    static constexpr float DICE_GAP = 4.5f;
     static constexpr float KEY_SCALE = 0.4f;
 
     Scene(raylib::Camera3D &cam, raylib::Texture2D &texture);

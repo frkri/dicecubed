@@ -3,7 +3,6 @@
 #include "Vector3.hpp"
 #include "objects/dice.h"
 #include "raylib.h"
-#include <string>
 
 Scene::Scene(raylib::Camera3D &cam, raylib::Texture2D &texture)
     : Cam(cam), Texture(texture), DiceList() {
